@@ -9,7 +9,8 @@ cors = CORS(app)
 
 # De data wordt ingeladen
 
-df = pd.read_json(r'/Users/milouvanlaarhoven/PycharmProjects/zomer2020/api/csvjson.json')
+df = pd.read_json(
+    r'/Users/milouvanlaarhoven/PycharmProjects/zomer2020/api/csvjson.json')
 
 df.drop(df.loc[df["Hoe voel je je vandaag?"] == ""].index, inplace=True)
 
