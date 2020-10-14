@@ -7,6 +7,8 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 cors = CORS(app)
 
+# De data wordt ingeladen
+
 df = pd.read_json(r'/Users/milouvanlaarhoven/PycharmProjects/zomer2020/api/csvjson.json')
 
 df.drop(df.loc[df["Hoe voel je je vandaag?"] == ""].index, inplace=True)
@@ -23,6 +25,5 @@ def average_student():
 
 
 app.run()
-
 
 # http://127.0.0.1:5000/analyse/average/feeling
